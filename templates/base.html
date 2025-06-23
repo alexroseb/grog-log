@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" dir="ltr">
+<head>
+    {% block head %}
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/foundation.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+
+    <title>{% block title %}{% endblock %} - Grog Log</title>
+    {% endblock %}
+</head>
+<body>
+    <div id="header">
+        <h1>Grog Log</h1>
+    </div>
+    <div id="content">{% block content %}{% endblock %}</div>
+    <div id="footer">
+        This is the footer.
+    </div>
+    <script src="{{ url_for('static', filename='js/vendor/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/what-input.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/vendor/foundation.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+</body>
+</html>

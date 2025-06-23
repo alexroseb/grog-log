@@ -1,26 +1,26 @@
-0,Ancient Mariner,ingredients
-1,Beachcomber's Punch,ingredients
-2,Blackboard's Ghost,ingredients
-3,Blue Reef,ingredients
-4,Captain's Grog,ingredients
-5,Castaway,ingredients
-6,Colonel Beach's Plantation Punch,ingredients
-7,Cruzana,ingredients
-8,Don's Own Planter's,ingredients
-9,Headhunter,ingredients
-10,Hell In The Pacific,ingredients
-11,Mai Tai,ingredients
-12,Navy Grog,ingredients
-13,Noa Noa,ingredients
-14,Oceanic Punch,ingredients
-15,Pago Pago,ingredients
-16,Pieces Of Eight,ingredients
-17,Planet Of The Apes,ingredients
-18,Planter's Punch,ingredients
-19,Q.B. Cooler,ingredients
-20,Rum Barrel,ingredients
-21,Rum Lift,ingredients
-22,Shrunken Skull,ingredients
-23,Tahitian,ingredients
-24,Test Pilot,ingredients
-25,Tortuga,ingredients
+0,Ancient Mariner,"rum, ingredient2, ingredient3"
+1,Beachcomber's Punch,"rum, ingredient2, ingredient4"
+2,Blackboard's Ghost,"rum, ingredient2, ingredient5"
+3,Blue Reef,"rum, ingredient2, ingredient6"
+4,Captain's Grog,"rum, ingredient2, ingredient7"
+5,Castaway,"rum, ingredient2, ingredient8"
+6,Colonel Beach's Plantation Punch,"rum, ingredient2, ingredient9"
+7,Cruzana,"rum, ingredient2, ingredient10"
+8,Don's Own Planter's,"rum, ingredient2, ingredient11"
+9,Headhunter,"rum, ingredient2, ingredient12"
+10,Hell In The Pacific,"rum, ingredient2, ingredient13"
+11,Mai Tai,"rum, ingredient2, ingredient14"
+12,Navy Grog,"rum, ingredient2, ingredient15"
+13,Noa Noa,"rum, ingredient2, ingredient16"
+14,Oceanic Punch,"rum, ingredient2, ingredient17"
+15,Pago Pago,"rum, ingredient2, ingredient18"
+16,Pieces Of Eight,"rum, ingredient2, ingredient19"
+17,Planet Of The Apes,"rum, ingredient2, ingredient20"
+18,Planter's Punch,"rum, ingredient2, ingredient21"
+19,Q.B. Cooler,"rum, ingredient2, ingredient22"
+20,Rum Barrel,"rum, ingredient2, ingredient23"
+21,Rum Lift,"rum, ingredient2, ingredient24"
+22,Shrunken Skull,"rum, ingredient2, ingredient25"
+23,Tahitian,"rum, ingredient2, ingredient26"
+24,Test Pilot,"rum, ingredient2, ingredient27"
+25,Tortuga,"rum, ingredient2, ingredient28"
