@@ -1,30 +1,46 @@
-import sqlite3
 import csv
-
-con_setup = sqlite3.connect("grog-log.db")
-cur_setup = con_setup.cursor()
+import os
+from psycopg2 import pool
+from dotenv import load_dotenv
 
 def make_drinks_db():
-    cur_setup.execute("DROP TABLE IF EXISTS drinks;")
-    con_setup.commit()
-    cur_setup.execute("""CREATE TABLE IF NOT EXISTS drinks(
-                    id INTEGER PRIMARY KEY,
-                    name TEXT NOT NULL UNIQUE,
-                    ingredients TEXT
-                ); """)
+    # Load .env file
+    load_dotenv()
+    # Get the connection string from the environment variable
+    connection_string = os.getenv('DATABASE_URL')
+    # Create a connection pool
+    connection_pool = pool.SimpleConnectionPool(
+        1,  # Minimum number of connections in the pool
+        10,  # Maximum number of connections in the pool
+        connection_string
+    )
+    # Check if the pool was created successfully
+    if connection_pool:
+        print("Connection pool created successfully")
+    # Get a connection from the pool
+    con_setup = connection_pool.getconn()
+
+    # Create a cursor object
+    cur_setup = con_setup.cursor()
     data = []
     with open('tikisubset.csv') as csvfile:
         reader = csv.reader(csvfile)
         for row in reader:
             data.append(row)
-    cur_setup.executemany("INSERT INTO drinks VALUES(?, ?, ?)", data)
+
+    # cursor.mogrify() to insert multiple values
+    args = ','.join(cur_setup.mogrify("(%s,%s,%s)", i).decode('utf-8')
+                    for i in data)
+
+    # executing the sql statement
+    cur_setup.execute("INSERT INTO drinks VALUES " + (args))
     con_setup.commit()
 
-def make_users_db():
-    cur_setup.execute("""CREATE TABLE IF NOT EXISTS users(
-                    username TEXT PRIMARY KEY,
-                    email TEXT NOT NULL UNIQUE,
-                    password TEXT NOT NULL,
-                    drink_log TEXT
-                ); """)
-    con_setup.commit()
+    # Close the cursor and return the connection to the pool
+    cur_setup.close()
+    connection_pool.putconn(con_setup)
+
+    # Close all connections in the pool
+    connection_pool.closeall()
+
+make_drinks_db()

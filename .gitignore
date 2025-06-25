@@ -50,3 +50,4 @@ venv.bak/
 
 # Custom
 grog-log.db
+.vscode/launch.json
