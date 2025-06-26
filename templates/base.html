@@ -7,22 +7,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/foundation.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>{% block title %}{% endblock %} - Grog Log</title>
     {% endblock %}
 </head>
 <body>
     <div id="header">
-        <h1>Grog Log</h1>
+        <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+            <button class="menu-icon" type="button" data-toggle></button>
+            <div class="title-bar-title">Menu</div>
+        </div>
+        <nav class="top-bar" id="main-menu">
+            <div class="top-bar-left">
+                <ul class="menu">
+                    <li>
+                        <a href="/" class="navbar-item">
+                            <i aria-label="Home" class="fa fa-home"></i>
+                        </a>
+                    </li>
+                    {% if session["logged_in"] %}
+                    <li>
+                        <a href="/profile" class="navbar-item">
+                            Profile
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="top-bar-right">
+                <ul class="menu">
+                    {% if session["logged_in"] %}
+                    <li>
+                        <a href="/logout" class="navbar-item">
+                            Logout
+                        </a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="/login" class="navbar-item">
+                            Login
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/signup" class="navbar-item">
+                            Sign Up
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
     </div>
-    <div id="content">{% block content %}{% endblock %}</div>
-    <div id="footer">
+    <div id="content" class="grid-container">{% block content %}{% endblock %}</div>
+    <div id="footer" class="grid-container">
         This is the footer.
     </div>
     <script src="{{ url_for('static', filename='js/vendor/jquery.js') }}"></script>
     <script src="{{ url_for('static', filename='js/vendor/what-input.js') }}"></script>
     <script src="{{ url_for('static', filename='js/vendor/foundation.js') }}"></script>
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    {% block anyjs %}{% endblock %}
 
 </body>
 </html>

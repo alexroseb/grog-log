@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Sign Up{% endblock %}
+{% block content %}
+<h3 class="title">Sign Up</h3>
+<div>
+    {% if error %}
+        <div class="callout alert">
+            {{ error }}
+        </div>
+    {% endif %}
+    <form method="POST" action="/signup">
+        <div class="grid-x grid-padding-x">
+            <div class="small-2 cell">
+                <label for="email" class="text-right middle"> Email </label>
+            </div>
+            <div class="cell auto">
+                <input type="email" name="email" id="email" placeholder="Email" autofocus="">
+            </div>
+        </div>
+        <div class="grid-x grid-padding-x">
+            <div class="small-2 cell">
+                <label for="username" class="text-right middle">Username</label>
+            </div>
+            <div class="cell auto">
+                <input type="text" id="username" name="username" placeholder="Username" autofocus="">
+            </div>
+        </div>
+        <div class="grid-x grid-padding-x">
+            <div class="small-2 cell">
+                <label for="password" class="text-right middle"> Password </label>
+            </div>
+            <div class="cell auto">
+                <input type="password" id="password" name="password" placeholder="Password">
+            </div>
+        </div>
+        <div class="center-button">
+            <button class="button">Sign Up</button> 
+        </div>
+    </form>
+</div>
+{% endblock %}

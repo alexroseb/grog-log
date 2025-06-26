@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<div class="column is-4 is-offset-4">
+    <h2>Login</h2>
+    <div class="box">
+        {% if error %}
+            <div class="callout alert">
+                {{ error }}
+            </div>
+        {% endif %}
+        <form method="POST" action="/login">
+
+            <div class="grid-x grid-padding-x">
+                <div class="small-2 cell">
+                    <label for="email" class="text-right middle"> Email or Username</label>
+                </div>
+                <div class="cell auto">
+                    <input id="email" type="text" name="email" placeholder="Your Email or Username" autofocus="">
+                </div>
+            </div>
+            <div class="grid-x grid-padding-x">
+                <div class="small-2 cell">
+                    <label for="password" class="text-right middle"> Password</label>
+                </div>
+                <div class="cell auto">
+                    <input id="password" type="password" name="password" placeholder="Your Password">
+                </div>
+            </div>
+            <div class="center-button">
+                <button class="button is-block is-info is-large is-fullwidth">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}{{username}}{% endblock %}
+{% block content %}
+    {% if session["logged_in"] %}
+        <div class="switch small">
+            <input class="switch-input" id="is_public" type="checkbox" name="is_public">
+            <label class="switch-paddle" for="is_public">
+                <span class="show-for-sr">Toggle Public</span>
+            </label>
+        </div>
+        {% if public != True %}
+            <!--Say that the profile is not public-->
+        {% endif %}
+    {% endif %}
+    {% if username== "User does not exist" %}
+        <p>This user does not exist.</p>
+    {% else %}
+        <h2>{{username}}'s Grog Log</h2>
+        {% if hasData %}
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Log entry</th>
+                    <th>Comment</th>
+                </tr>
+                {% for log in drink_log["entries"] %}
+                    <tr>
+                        <td>{{log["date"]}}</td>
+                        <td>{{log["drink_name"]}}</td>
+                        <td>{{log["comment"]}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>This user does not have a public Grog Log.</p>
+        {% endif %}
+    {% endif %}
+{% endblock %}
