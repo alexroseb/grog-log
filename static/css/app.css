@@ -1,5 +1,157 @@
+:root {
+  --button-color: #6E2529;
+  --button-highlight: #410F14;
+  --menu-background: #DAA9AD;
+}
+
 .center-button {
   width:100%;
   display: flex;
   justify-content: center;
+}
+
+a:hover, a:focus,
+.tabs-title > a:hover {
+  color: var(--button-highlight);
+}
+kbd, 
+.code-inline, code, .code-block, 
+input:disabled, input[readonly], textarea:disabled, textarea[readonly], 
+.input-group-label, select:disabled, 
+.top-bar, .top-bar ul,
+.slider,
+.off-canvas-absolute, .off-canvas,
+.card-divider,
+.pagination a:hover,
+.pagination button:hover,
+.accordion-title:hover, .accordion-title:focus,
+.pagination a:hover,
+.pagination button:hover {
+  background-color: var(--menu-background);
+}
+.button:hover, .button:focus {
+  background-color: var(--button-highlight);
+  color: #fefefe;
+}
+.button, .button.disabled, .button[disabled], .button.disabled:hover, .button[disabled]:hover, .button.disabled:focus, .button[disabled]:focus ,
+.button.primary, .button.primary.disabled, .button.primary[disabled], .button.primary.disabled:hover, .button.primary[disabled]:hover, .button.primary.disabled:focus, .button.primary[disabled]:focus {
+  background-color: var(--button-color);
+  color: #fefefe;
+}
+.button.hollow, .button.hollow.disabled, .button.hollow[disabled], .button.hollow.disabled:hover, .button.hollow[disabled]:hover, .button.hollow.disabled:focus, .button.hollow[disabled]:focus,
+.button.hollow.primary, .button.hollow.primary.disabled, .button.hollow.primary[disabled], .button.hollow.primary.disabled:hover, .button.hollow.primary[disabled]:hover, .button.hollow.primary.disabled:focus, .button.hollow.primary[disabled]:focus {
+  border: 1px solid var(--button-color);
+  color: var(--button-color);
+}
+a,
+.button.clear, .button.clear.disabled, .button.clear[disabled], .button.clear.disabled:hover, .button.clear[disabled]:hover, .button.clear.disabled:focus, .button.clear[disabled]:focus,
+.button.clear.primary, .button.clear.primary.disabled, .button.clear.primary[disabled], .button.clear.primary.disabled:hover, .button.clear.primary[disabled]:hover, .button.clear.primary.disabled:focus, .button.clear.primary[disabled]:focus,
+.button-group.clear.primary .button, .button-group.clear.primary .button.disabled, .button-group.clear.primary .button[disabled], .button-group.clear.primary .button.disabled:hover, .button-group.clear.primary .button[disabled]:hover, .button-group.clear.primary .button.disabled:focus, .button-group.clear.primary .button[disabled]:focus, .button-group.clear .button.primary, .button-group.clear .button.primary.disabled, .button-group.clear .button.primary[disabled], .button-group.clear .button.primary.disabled:hover, .button-group.clear .button.primary[disabled]:hover, .button-group.clear .button.primary.disabled:focus, .button-group.clear .button.primary[disabled]:focus,
+.button-group.clear .button, .button-group.clear .button.disabled, .button-group.clear .button[disabled], .button-group.clear .button.disabled:hover, .button-group.clear .button[disabled]:hover, .button-group.clear .button.disabled:focus, .button-group.clear .button[disabled]:focus,
+.breadcrumbs a,
+.tabs-title > a  {
+  color: var(--button-color);
+}
+.button.dropdown.hollow::after, .button.dropdown.clear::after,
+.button.dropdown.hollow.primary::after, .button.dropdown.clear.primary::after {
+  border-top-color: var(--button-color);
+}
+.accordion-title {
+  border: 1px solid var(--menu-background);
+  color: var(--button-color);
+}
+:last-child:not(.is-active) > .accordion-title,
+:last-child > .accordion-content:last-child {
+  border-bottom: 1px solid var(--menu-background);
+}
+.accordion-content,
+.card,
+.tabs,
+.tabs-content, .tabs-content.vertical {
+  border: 1px solid var(--menu-background);
+}
+.accordion-menu .is-accordion-submenu-parent:not(.has-submenu-toggle) > a::after,
+.submenu-toggle::after  {
+  border-color: var(--button-color) transparent transparent;
+}
+.badge,
+.badge.primary,
+.pagination .current,
+input:checked ~ .switch-paddle,
+.tabs.primary,
+.button-group.primary .button, .button-group.primary .button.disabled, .button-group.primary .button[disabled], .button-group.primary .button.disabled:hover, .button-group.primary .button[disabled]:hover, .button-group.primary .button.disabled:focus, .button-group.primary .button[disabled]:focus,
+.menu .is-active > a, .menu .active > a,
+.label, .label.primary,
+.slider-handle,
+.progress-meter, .progress.primary .progress-meter {
+  background-color: var(--button-color);
+}
+.button-group.hollow.primary .button, .button-group.hollow.primary .button.disabled, .button-group.hollow.primary .button[disabled], .button-group.hollow.primary .button.disabled:hover, .button-group.hollow.primary .button[disabled]:hover, .button-group.hollow.primary .button.disabled:focus, .button-group.hollow.primary .button[disabled]:focus, .button-group.hollow .button.primary, .button-group.hollow .button.primary.disabled, .button-group.hollow .button.primary[disabled], .button-group.hollow .button.primary.disabled:hover, .button-group.hollow .button.primary[disabled]:hover, .button-group.hollow .button.primary.disabled:focus, .button-group.hollow .button.primary[disabled]:focus,
+.button-group.hollow .button, .button-group.hollow .button.disabled, .button-group.hollow .button[disabled], .button-group.hollow .button.disabled:hover, .button-group.hollow .button[disabled]:hover, .button-group.hollow .button.disabled:focus, .button-group.hollow .button[disabled]:focus {
+  border: 1px solid var(--button-color);
+  color: var(--button-color);
+}
+.drilldown .is-drilldown-submenu-parent > a::after,
+.drilldown.align-left .is-drilldown-submenu-parent > a::after {
+  border-color: transparent transparent transparent var(--button-color);
+}
+.drilldown.align-right .is-drilldown-submenu-parent > a::after,
+.drilldown .js-drilldown-back > a::before {
+  border-color: transparent var(--button-color) transparent transparent;
+}
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+  border-color: var(--button-color) transparent transparent;
+}
+.dropdown.menu > li.is-active > a {
+  color: var(--button-color);
+}
+.dropdown.menu.vertical > li.opens-left > a::after {
+  border-color: transparent var(--button-color) transparent transparent;
+}
+.dropdown.menu.vertical > li.opens-right > a::after {
+  border-color: transparent transparent transparent var(--button-color);
+}
+@media print, screen and (min-width: 40em) {
+  .dropdown.menu.medium-horizontal > li.is-dropdown-submenu-parent > a::after {
+    border-color: var(--button-color) transparent transparent;
+  }
+  .dropdown.menu.medium-vertical > li > a::after {
+    right: 14px;
+  }
+  .dropdown.menu.medium-vertical > li.opens-left > a::after {
+    border-color: transparent var(--button-color) transparent transparent;
+  }
+  .dropdown.menu.medium-vertical > li.opens-right > a::after {
+    border-color: transparent transparent transparent var(--button-color);
+  }
+}
+@media print, screen and (min-width: 64em) {
+  .dropdown.menu.large-horizontal > li.is-dropdown-submenu-parent > a::after {
+    border-color: var(--button-color) transparent transparent;
+  }
+  .dropdown.menu.large-vertical > li.opens-left > a::after {
+    border-color: transparent var(--button-color) transparent transparent;
+  }
+  .dropdown.menu.large-vertical > li.opens-right > a::after {
+    border-color: transparent transparent transparent var(--button-color);
+  }
+}
+.is-dropdown-submenu .is-dropdown-submenu-parent.opens-left > a::after {
+  border-color: transparent var(--button-color) transparent transparent;
+}
+.is-dropdown-submenu .is-dropdown-submenu-parent.opens-right > a::after {
+  border-color: transparent transparent transparent var(--button-color);
+}
+.slider-handle:hover,
+input:checked:focus-visible ~ .switch-paddle,
+.tabs.primary > li > a:hover, .tabs.primary > li > a:focus {
+  background: var(--button-highlight);
+}
+.tabs-title > a:focus, .tabs-title > a[aria-selected=true] {
+  background: var(--menu-background);
+  color: var(--button-color);
+}
+.title-bar {
+  background: var(--menu-background);
+  color: var(--button-color);
 }
